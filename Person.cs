@@ -1,29 +1,30 @@
 namespace homework;
 public class Person
 {
-    public string  Name { get; set; }
-    public string  Address { get; set; }
+    protected string  _name;
+    protected string  _address;
     
     public Person(string name, string address)
     {
-        Name=name;
-        Address=address;
+        _name=name;
+        _address=address;
     }
-    public string getName()
+    public string GetName()
     {
-        return Name;
+        return _name;
     }
-    public string getAddress()
+    public string GetAddress()
     {
-        return Address;
+        return _address;
     }
-    public void setAddress(string address)
+    public void SetAddress(string address)
     {
-       Address = address;
+       _address = address;
     }
-   public override string ToString()
+   public virtual string ToString()
    {
-    return $"{Name} , {Address}";
+    return $"{_name}{(_address)}";
    }
+
 
 }

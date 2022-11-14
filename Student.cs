@@ -1,34 +1,31 @@
 namespace homework;
 public class Student : Person
 {
-    public int  numCourses = 0 ;
-    private List<String>list;
-    public string  courses ;
-    public int  grades  ;
+    private int  numCourses = 0 ;
+    private List<string>  _courses ;
+    private List<int>  _grades  ;
+    private object grades;
+
     public Student( string name, string address) : base(name, address)
     {
-         list = new List<String>();
+         _courses = new List<string>();
+         _grades = new List<int>();
     }
     public override string ToString()
     {
-        return Name + " " +Address;
+        return $"Student: {base.ToString()}";
     }
-
-    public List<String> GetList()
+    public void AddCourseGrade(string courses, int grades)
     {
-        return list;
+      _courses.Add(courses);
+      _grades.Add(grades);
     }
-    public void AddCourseGread(string courses, int grades, List<object> list)
+    public void PrintGrades()
     {
-        numCourses++;
-        list.Add(courses , grades);
-    }
-    public void printGrades()
-    {
-        foreach (var item in list)
+        foreach (var item in _grades)
         {
-            System.Console.WriteLine(item.grades);
+            System.Console.WriteLine($"{grades},");
         }
     }
-
+    
 }

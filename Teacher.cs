@@ -1,13 +1,35 @@
 namespace homework;
 public class Teacher : Person
 { 
-    public int  numCourses = 0 ;
-    public string courses ;
-    private List<Object>list;
+    private int  _numCourses = 0 ;
+    private string _courses ;
     public Teacher( string name, string address) : base(name, address)
     {
-        list= new List<Object>();
     }
+    public string ToString()
+    {
+        return $"Teacher {_name}({_address})";
+    }
+    public Boolean AddCourse(string courses)
+    {
+        _courses = courses;
+        if(_courses == null)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    public Boolean RemoveCourse(string courses)
+    {
+        if(_courses == courses)
+        return false;
+        else{
+            return true;
+        }
+    }
+
 
     
     
